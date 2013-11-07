@@ -2,12 +2,21 @@ source 'https://rubygems.org'
 
 gem "koala", "~> 1.8.0rc1"
 gem "devise"
+gem "omniauth-facebook", "~> 1.4.1"
+gem 'awesome_print'
+#gem "acts_as_commentable", "~> 4.0.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 as the database for Active Record.
+group :development, :test do
+	gem 'pry'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'sqlite3'
+	gem 'dotenv-rails'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -33,6 +42,11 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+
+# group: :production do
+# 	gem 'rails_12factor'
+# 	gem 'pg'
+# 	gem 'unicorn'
 end
 
 # Use ActiveModel has_secure_password

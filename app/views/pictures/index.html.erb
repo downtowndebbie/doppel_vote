@@ -1,1 +1,19 @@
-Welcome page
+<h1>Welcome to Doppelgangers Central!</h1>
+
+<!-- FBGallery 592507767875 --> <!--/FBGallery -->
+
+
+
+<ul>
+	<% @doppelgangers.each do |doppelganger| %>
+		<li><%= doppelganger[:id] %>, <img src="<%= doppelganger[:url] %>"/></li>
+		<div>
+			<%= form_tag("/post/comment", method: "post") do %>
+			  <%= label_tag(:comment, "comment:") %>
+			  <%= text_field_tag(:comment) %>
+			  <%= hidden_field_tag(:pic_url, doppelganger[:url]) %>
+			  <%= submit_tag("submit") %>
+			<% end %>
+		</div>
+	<% end %>
+</ul>

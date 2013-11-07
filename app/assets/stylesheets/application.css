@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+
+li {
+	list-style: none;
+}
+
+img { 
+
+
+input {
+	width: 30px;
+}

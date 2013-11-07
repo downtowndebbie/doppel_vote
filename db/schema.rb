@@ -14,27 +14,25 @@
 ActiveRecord::Schema.define(version: 20131105024909) do
 
   create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "picture_id"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pictures", force: true do |t|
-    t.integer  "facebook_id"
     t.string   "facebook_url"
-    t.integer  "user_id"
+    t.integer  "comments_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
+    t.integer  "comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username"
-    t.string   "token"
-    t.string   "token_secret"
-    t.string   "uid"
-    t.string   "provider"
   end
 
 end
