@@ -5,15 +5,19 @@
 
 
 <ul>
-	<% @doppelgangers.each do |doppelganger| %>
-		<li><%= doppelganger[:id] %>, <img src="<%= doppelganger[:url] %>"/></li>
+	<% @picture.each do |picture| %>
+		<li><img src="<%= picture[:url] %>"/></li>
 		<div>
 			<%= form_tag("/post/comment", method: "post") do %>
 			  <%= label_tag(:comment, "comment:") %>
 			  <%= text_field_tag(:comment) %>
-			  <%= hidden_field_tag(:pic_url, doppelganger[:url]) %>
+			  <%= hidden_field_tag(:pic_url, picture[:url]) %>
 			  <%= submit_tag("submit") %>
 			<% end %>
+
+			<%= Picture.get_comments_for(picture[:url]) %>
+
 		</div>
 	<% end %>
 </ul>
+

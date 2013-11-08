@@ -12,4 +12,15 @@ class Picture < ActiveRecord::Base
 
 #picture.new()
 
+	def self.get_comments_for(url)
+	  picture = Picture.find_by_facebook_url(url)
+	  picture ? join_comments(picture) : ""
+	 end
+
+	def self.join_comments(picture)
+		contents = []
+		picture.comments.each { |comment| contents << comment.content }
+		contents.join("; ")
+	end
+
 end

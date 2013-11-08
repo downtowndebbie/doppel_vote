@@ -6,18 +6,24 @@ class CommentsController < ApplicationController
  #    user_comments 
  #  	end 
 
-  	def post
-  		comment = Comment.new
-  		comment = Comment.create(content: params[:comment])
-  		# current_user.comments << comment
-  		picture = Picture.create(facebook_url: params[:pic_url])
-  		picture.comments << comment
-  		picture.save
-  		redirect_to ('/')
-  	end
+  def post
+      comment = Comment.create(content: params[:comment])
+      # current_user.comments << comment
+      picture = Picture.find_or_create_by(facebook_url: params[:pic_url])
+      picture.comments << comment
+      picture.save
+      redirect_to ('/') 
+    end
 
-  	def show
-  		@comments = Comment.all
-  	end
+    def show
+      @comments = Comment.all
+    end
+
+    def destroy
+      @comment = Comment.find(params[:id])
+      @comment.destroy
+   
+      redirect_to('/')
+    end
 
 end
