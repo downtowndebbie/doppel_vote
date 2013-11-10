@@ -5,6 +5,7 @@ gem "devise"
 gem "omniauth-facebook", "~> 1.4.1"
 gem 'awesome_print'
 #gem "acts_as_commentable", "~> 4.0.1"
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'

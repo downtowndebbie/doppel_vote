@@ -12,8 +12,8 @@ class Picture < ActiveRecord::Base
 
 #picture.new()
 
-	def self.get_comments_for(url)
-	  picture = Picture.find_by_facebook_url(url)
+	def self.get_comments_for(id)
+	  picture = Picture.find_by_facebook_id(id)
 	  picture ? join_comments(picture) : ""
 	 end
 
