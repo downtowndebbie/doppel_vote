@@ -20,7 +20,7 @@ class Picture < ActiveRecord::Base
 	def self.join_comments(picture)
 		contents = []
 		picture.comments.each { |comment| contents << comment.content }
-		contents.join("; ")
+		contents.join ("; ")
 	end
 
 end

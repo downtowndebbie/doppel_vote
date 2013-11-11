@@ -1,8 +1,8 @@
 class PicturesController < ApplicationController
 	def index
-		api_key = "CAACEdEose0cBAD9VoC5skza1w3eYFfNyDZBd0iPzQY7T7qSOPt2dRxBc0CYCshTT4bJmsxJSbQFrt85YQQ5gAyvcQHuCT3pZB4qKZAb3tdy41zMB6FJLqfN5dnfCrrjvGGpOFZCOLMiwLuam6XJHx5nZArOZB0TFKt7eSTHyGvlEaoPjADsxgfbmYZCh20nTnQWWL1pOsRCxQZDZD"
+		api_key = "CAACEdEose0cBAD945FsBd1TueVZAXVXmwLUnoGZAc03ay2ljIKpYeuVhfL66uCY3OrntsZBAM1ztsNZA44tsZBgFQ4aaZA77OPP5uJTRcEyNN9ATfX9VnMKMTuvVyU2nP5PiVk9xPmrbb8Ec1ZAtzVnOWQpOoGfvq2uG4pZBZCZAKZAW0dDfyBtow6XZCf8jQVCZBY71AMPOByqfCLQZDZD"
 
-		@graph = Koala::Facebook::API.new("CAACEdEose0cBAD9VoC5skza1w3eYFfNyDZBd0iPzQY7T7qSOPt2dRxBc0CYCshTT4bJmsxJSbQFrt85YQQ5gAyvcQHuCT3pZB4qKZAb3tdy41zMB6FJLqfN5dnfCrrjvGGpOFZCOLMiwLuam6XJHx5nZArOZB0TFKt7eSTHyGvlEaoPjADsxgfbmYZCh20nTnQWWL1pOsRCxQZDZD")
+		@graph = Koala::Facebook::API.new("CAACEdEose0cBAD945FsBd1TueVZAXVXmwLUnoGZAc03ay2ljIKpYeuVhfL66uCY3OrntsZBAM1ztsNZA44tsZBgFQ4aaZA77OPP5uJTRcEyNN9ATfX9VnMKMTuvVyU2nP5PiVk9xPmrbb8Ec1ZAtzVnOWQpOoGfvq2uG4pZBZCZAKZAW0dDfyBtow6XZCf8jQVCZBY71AMPOByqfCLQZDZD")
 		# album_id = # dynamically get a user's album id
 		album_id = "592507767875"
 		photos = @graph.get_connections("592507767875", "photos")
