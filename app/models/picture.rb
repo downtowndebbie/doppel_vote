@@ -19,8 +19,10 @@ class Picture < ActiveRecord::Base
 
 	def self.join_comments(picture)
 		contents = []
-		picture.comments.each { |comment| contents << comment.content }
-		contents.join ("; ")
+		picture.comments.each { |comment| contents << comment.content }			
+		# picture.comments.each do |comment| 
+		# 	contents << comment.content
+		# end
 	end
 
 end

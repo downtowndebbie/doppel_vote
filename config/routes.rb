@@ -1,7 +1,7 @@
 DoppelVote::Application.routes.draw do
   root 'pictures#index'
   devise_for :users
-  post 'comment' => 'comments#create'
+  post '/comment' => 'comments#create'
   # resources :pictures
 
   # The priority is based upon order of creation: first created -> highest priority.

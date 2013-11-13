@@ -7,16 +7,17 @@ I enjoy spotting look alikes and this photo album has become quite popular among
 	<% @pictures.each do |picture| %>
 		<li><img src="<%= picture[:url] %>"/></li>
 		<div>
-			<%= form_tag("comment", method: "post") do %>
-			  <%= label_tag(:comment, "comment:") %>
-			  <%= text_field_tag(:comment) %>
-			  <%= hidden_field_tag(:facebook_id, picture[:id]) %>
-			  <%= submit_tag("submit") %>
-			<% end %>
-
-			<%= render 'comment' %>
-			<%= Picture.get_comments_for(picture[:id]) %>
-
+			<ul>
+				<%= render 'comment' %>
+				<li><b>Comments and Ratings</b></li>
+				<% Picture.where(facebook_id: picture[:id]).each do |picture_comments| %>
+					<% picture_comments.comments.each do |comment| %>
+						------------------------------------------------------------------------<br />
+						<%= "Posted by: #{comment.user.email} at #{comment.created_at.strftime("%c")}" %><br />
+						<color: #336699><%= "#{comment.content}" %><br /><br />
+					<% end %>
+				<% end %>
+			</ul>
 		</div>
 	<% end %>
 </ul>

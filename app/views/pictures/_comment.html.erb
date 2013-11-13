@@ -2,10 +2,11 @@
     <div class="text-right">
         <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">What do you think?</a>
     </div>
-
-    <div class="row" id="post-review-box" style="display:none;">
+<% @pictures.each do |picture| %>
+    <div class="row" id="post-review-box" style="display:none;" width="200px">
         <div class="col-md-12">
-            <form accept-charset="UTF-8" action="" method="post">
+            <form accept-charset="UTF-8" action="/comment" method="post">
+                    <%= hidden_field_tag(:facebook_id, picture[:id]) %>
                 <input id="ratings-hidden" name="rating" type="hidden"> 
                 <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your reaction to this doppel pair here..." rows="5"></textarea>
 
@@ -18,4 +19,5 @@
             </form>
         </div>
     </div>
+<% end %>
 </div> 

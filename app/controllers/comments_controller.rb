@@ -8,12 +8,16 @@ class CommentsController < ApplicationController
 
   def create
     picture = Picture.find_or_create_by(facebook_id: params[:facebook_id])
-    if picture.comments.create(content: params[:comment])
-      redirect_to root_url
-    else
-      flash[:notice] = "Comment couldn't be saved"
-      render 'index'
-    end
+    comment = Comment.create(content: params[:comment], rating: params[:rating].to_i, user_id: current_user.id)
+    picture.comments << comment
+    picture.save
+    redirect_to root_path
+    # if picture.comments.create(content: params[:comment], rating: params[:rating])
+    #   redirect_to "/"
+    # else
+    #   flash[:notice] = "Comment couldn't be saved"
+    #   render 'index'
+    # end
   end
 
   def show
@@ -28,6 +32,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
  
-    redirect_to root_url
+    redirect_to root_path
   end
 end
+
+
+
