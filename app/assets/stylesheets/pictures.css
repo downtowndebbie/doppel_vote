@@ -1,0 +1,25 @@
+// Place all the styles related to the Pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ .animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+    width: 300px;
+}
+
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d17581;
+}
+
+.well {
+	width: 70%;
+	align: left;
+}
+
+.comment_color {
+	color: #336699;
+}

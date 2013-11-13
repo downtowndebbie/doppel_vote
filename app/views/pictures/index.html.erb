@@ -14,7 +14,10 @@ I enjoy spotting look alikes and this photo album has become quite popular among
 					<% picture_comments.comments.each do |comment| %>
 						------------------------------------------------------------------------<br />
 						<%= "Posted by: #{comment.user.email} at #{comment.created_at.strftime("%c")}" %><br />
-						<color: #336699><%= "#{comment.content}" %><br /><br />
+						<span class="comment_color">
+							<li> <%= "I rated this doppel match #{comment.rating} stars" %> </li>
+							<%= "#{comment.content}" %>
+						</span><br /><br />
 					<% end %>
 				<% end %>
 			</ul>
