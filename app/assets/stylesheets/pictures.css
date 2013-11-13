@@ -5,7 +5,7 @@
     -webkit-transition: height 0.2s;
     -moz-transition: height 0.2s;
     transition: height 0.2s;
-    width: 300px;
+    margin: 0 auto;
 }
 
 .stars
@@ -17,9 +17,12 @@
 
 .well {
 	width: 70%;
-	align: left;
 }
 
 .comment_color {
 	color: #336699;
+}
+
+.email_bold {
+    font-weight: bold;
 }

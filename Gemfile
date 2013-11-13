@@ -15,7 +15,8 @@ group :development, :test do
 	gem 'pry'
 	gem 'better_errors'
 	gem 'binding_of_caller'
-	gem 'sqlite3'
+	#gem 'sqlite3'
+	gem 'pg'
 	gem 'dotenv-rails'
 end
 
@@ -45,7 +46,7 @@ group :doc do
   gem 'sdoc', require: false
 
 # group: :production do
-# 	gem 'rails_12factor'
+ 	gem 'rails_12factor', group: :production
 # 	gem 'pg'
 # 	gem 'unicorn'
 end

@@ -1,8 +1,9 @@
-<h1>Welcome to Doppelgangers Central!</h1>
+<h1><b>Welcome to Doppelgängers Central!</b></h1>
 <!-- FBGallery 592507767875 --> <!--/FBGallery -->
-I enjoy spotting look alikes and this photo album has become quite popular amongst my friends.  Do we see eye to eye?  <b>Leave me a comment to let me know!</b>
+<h3>This photo album has become quite popular amongst my friends as I've compiled these share worthy look alikes over time.  <br>
+	Do we see eye to eye?  <b>Leave me a comment to let me know!</b></h3>
 
-
+<i>Note: You must be logged in before you can submit a comment.</i>
 <ul>
 	<% @pictures.each do |picture| %>
 		<li><img src="<%= picture[:url] %>"/></li>
@@ -12,12 +13,15 @@ I enjoy spotting look alikes and this photo album has become quite popular among
 				<li><b>Comments and Ratings</b></li>
 				<% Picture.where(facebook_id: picture[:id]).each do |picture_comments| %>
 					<% picture_comments.comments.each do |comment| %>
-						------------------------------------------------------------------------<br />
-						<%= "Posted by: #{comment.user.email} at #{comment.created_at.strftime("%c")}" %><br />
+						---------------------------------------------------------------------------------<br />
+							Posted by <span class="email_bold"><%= "#{comment.user.email}" %></span><%=" at #{comment.created_at.strftime("%c")}" %><br />
 						<span class="comment_color">
-							<li> <%= "I rated this doppel match #{comment.rating} stars" %> </li>
+							<li> <%= "I rated this doppel match #{comment.rating} stars." %> </li>
 							<%= "#{comment.content}" %>
 						</span><br /><br />
+						<% if picture_comments.blank? %>
+							<%= "There are no comments or ratings for this doppel pair yet. Be the first to speak your mind!" %><br />
+						<% end %>
 					<% end %>
 				<% end %>
 			</ul>
