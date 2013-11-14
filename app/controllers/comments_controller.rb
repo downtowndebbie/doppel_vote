@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     comment = Comment.create(content: params[:comment], rating: params[:rating].to_i, user_id: current_user.id)
     picture.comments << comment
     picture.save
-    redirect_to root_path
+    redirect_to '/'
     # if picture.comments.create(content: params[:comment], rating: params[:rating])
     #   redirect_to "/"
     # else
