@@ -9,7 +9,7 @@
 		<li><img src="<%= picture[:url] %>"/></li>
 		<div>
 			<ul>
-				<%= render 'comment' %>
+				<%= render 'comment', picture: picture %>
 				<li><b>Comments and Ratings</b></li>
 				<% Picture.where(facebook_id: picture[:id]).each do |picture_comments| %>
 					<% picture_comments.comments.each do |comment| %>

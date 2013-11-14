@@ -2,8 +2,8 @@
     <div class="text-right">
         <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">What do you think?</a>
     </div>
-<% @pictures.each do |picture| %>
-    <div class="row" id="post-review-box" style="display:none;" width="200px">
+
+    <div class="row" id="post-review-box" width="200px">
         <div class="col-md-12">
             <form accept-charset="UTF-8" action="/comment" method="post">
                     <%= hidden_field_tag(:facebook_id, picture[:id]) %>
@@ -19,5 +19,4 @@
             </form>
         </div>
     </div>
-<% end %>
 </div> 

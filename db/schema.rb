@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20131112234426) do
 
   create_table "pictures", force: true do |t|
     t.string   "facebook_url"
-    t.integer  "facebook_id"
+    t.string   "facebook_id"
     t.integer  "comments_id"
     t.datetime "created_at"
     t.datetime "updated_at"
