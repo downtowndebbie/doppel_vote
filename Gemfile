@@ -15,8 +15,7 @@ group :development, :test do
 	gem 'pry'
 	gem 'better_errors'
 	gem 'binding_of_caller'
-	#gem 'sqlite3'
-	gem 'pg'
+	gem 'sqlite3'
 	gem 'dotenv-rails'
 end
 
@@ -45,9 +44,9 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 
-# group: :production do
- 	gem 'rails_12factor', group: :production
-# 	gem 'pg'
+ group: :production do
+ 	gem 'rails_12factor'
+ 	gem 'pg'
 # 	gem 'unicorn'
 end
 
