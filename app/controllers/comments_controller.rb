@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 	before_action :authenticate_user!, only: [:create]
+  # No need to comment out code that you're no longer using. Trust git! It will 
+  # save the history of all of your files.
 
 	# def comment.show do
  #    attributes_table :name, :comment, :timestamp

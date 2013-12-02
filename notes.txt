@@ -1,0 +1,7 @@
+- I couldn't access your heroku site! Is it up at http://mighty-dusk-3056.herokuapp.com/? I'm getting a "Heroku | No such app" error.
+
+- Nice work setting up custom css in your asset pipeline, particularly pictures.css.
+
+- It looks like you tried your hand at javascript, which is great! Javascript is a whole new language and understanding how data flows from the routing system all the way through to the client side code (html.erb, js, css) is critical. Take a look here to start: http://guides.rubyonrails.org/asset_pipeline.html
+
+- You took on a difficult API in Facebook, and you did well with it. Now you have so much more you can do to grow this application and build on what you learned in BEWD. Best of luck!
