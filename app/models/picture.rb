@@ -12,6 +12,8 @@ class Picture < ActiveRecord::Base
 
 #picture.new()
 
+  # these are both very nice helper methods! I think only `join_comments` is
+  # being used, though.
 	def self.get_comments_for(id)
 	  picture = Picture.find_by_facebook_id(id)
 	  picture ? join_comments(picture) : ""

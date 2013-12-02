@@ -11,6 +11,12 @@
 			<ul>
 				<%= render 'comment', picture: picture %>
 				<li><b>Comments and Ratings</b></li>
+        <% =begin %>
+          This is really well done. The where clause puts the right pictures in
+          scope. Then the rest of the page is rendered with very little logic.
+          That's the goal: keep as much logic out of the views and in the 
+          controllers and models. Great work!
+        <% =end %>
 				<% Picture.where(facebook_id: picture[:id]).each do |picture_comments| %>
 					<% picture_comments.comments.each do |comment| %>
 						---------------------------------------------------------------------------------<br />
